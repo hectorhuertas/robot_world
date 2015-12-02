@@ -33,4 +33,11 @@ class RobotManager
   def self.find(id)
     Robot.new(raw_robot(id))
   end
+
+  def self.update(id, data)
+    database.transaction do
+      target = database['robots'].find { |data| data["id"] == id }
+      target["name"] = data['name']
+    end
+  end
 end
