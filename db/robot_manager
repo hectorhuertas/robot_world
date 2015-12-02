@@ -1,0 +1,7 @@
+---
+robots:
+- id: 1
+  name: Megaman
+- id: 2
+  name: Mazinger
+total: 2
