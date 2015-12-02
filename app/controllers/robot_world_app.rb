@@ -1,5 +1,6 @@
 require 'models/robot_manager'
 # require 'sinatra/partial'
+require 'haml'
 
 class RobotWorldApp < Sinatra::Base
   # register Sinatra::Partial
@@ -8,7 +9,7 @@ class RobotWorldApp < Sinatra::Base
   # set :partial_template_engine, :erb
 
   get '/' do
-    erb :main
+    haml :dashboard
   end
 
   get '/robots/new' do

@@ -7,4 +7,11 @@ robots:
   city: asg
   hired: sg
   department: sg
-total: 9
+- id: 10
+  name: Destructor
+  birth: ds
+  state: sg
+  city: gs
+  hired: sg
+  department: sg
+total: 10
