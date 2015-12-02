@@ -1,7 +1,7 @@
 ---
 robots:
-- id: 1
-  name: Megamans
 - id: 2
   name: Mazinger Z
-total: 2
+- id: 3
+  name: Botron XZY
+total: 3

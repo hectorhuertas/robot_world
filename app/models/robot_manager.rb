@@ -40,4 +40,10 @@ class RobotManager
       target["name"] = data['name']
     end
   end
+
+  def self.delete(id)
+    database.transaction do
+      database['robots'].delete_if { |robot| robot["id"] == id }
+    end
+  end
 end

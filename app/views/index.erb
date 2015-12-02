@@ -1,4 +1,8 @@
 <% @robots.each do |robot| %>
   <h2><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h2>
   <a href="/robots/<%= robot.id %>/edit">Edit</a>
+  <form action="/robots/<%= robot.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
 <% end %>
