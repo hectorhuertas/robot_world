@@ -1,1 +1,10 @@
-<h2><%= @robot.name %></h2>
+<%= erb :robot , :locals =>{
+:id => @robot.id,
+:avatar => @robot.avatar,
+:name => @robot.name,
+:birth => @robot.birth,
+:state => @robot.state,
+:city => @robot.city,
+:hired => @robot.hired,
+:department => @robot.department
+}%>

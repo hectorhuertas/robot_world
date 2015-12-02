@@ -1,7 +1,11 @@
 require 'models/robot_manager'
+# require 'sinatra/partial'
+
 class RobotWorldApp < Sinatra::Base
+  # register Sinatra::Partial
   set :root, File.expand_path("..", __dir__)
   set :method_override, true
+  # set :partial_template_engine, :erb
 
   get '/' do
     erb :main

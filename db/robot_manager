@@ -1,7 +1,10 @@
 ---
 robots:
-- id: 2
-  name: Mazinger Z
-- id: 3
-  name: Botron XZY
-total: 3
+- id: 9
+  name: asd
+  birth: asdf
+  state: asg
+  city: asg
+  hired: sg
+  department: sg
+total: 9
