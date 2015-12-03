@@ -7,4 +7,11 @@ robots:
   city: dfsfX
   hired: '2015-12-12'
   department: dsfX
-total: 1
+- id: 2
+  name: Malo
+  birth: '2015-12-14'
+  state: asdf
+  city: gsg
+  hired: '2015-12-18'
+  department: sgasg
+total: 2
