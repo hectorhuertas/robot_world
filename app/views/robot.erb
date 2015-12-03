@@ -1,8 +1,26 @@
-<img src="<%= avatar %>" alt="avatar" />
-<h1><%= name %></h1>
-<h3><%= id %></h3>
-<h3><%= birth %></h3>
-<h3><%= state %></h3>
-<h3><%= city %></h3>
-<h3><%= hired %></h3>
-<h3><%= department %></h3>
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-image">
+      <span class="card-title">Card Title</span>
+      <a href="/robots/<%= robot.id %>"> <img class="responsive-img" src="<%= robot.avatar %>"></a>
+    </div>
+    <a href="/robots/<%= robot.id %>">
+      <div class="card-content center">
+        <h2><%= robot.id %>: <%= robot.name %></h2>
+      </div>
+    </a>
+    <div class="card-action">
+      <div class="row center">
+        <div class="col m6">
+          <a href="/robots/<%= robot.id %>/edit">Edit</a>
+        </div>
+        <div class="col m6">
+          <form action="/robots/<%= robot.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

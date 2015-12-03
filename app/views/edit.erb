@@ -2,10 +2,10 @@
 <form action="/robots/<%= @robot.id %>" method="post">
   <input type="hidden" name="_method" value="put">
   <input type="text" name="robot[name]" value="<%= @robot.name %>">
-  <input type="text" name="robot[birth]" value="<%= @robot.birth %>">
+  <input type="date" name="robot[birth]" value="<%= @robot.birth %>">
   <input type="text" name="robot[state]" value="<%= @robot.state %>">
   <input type="text" name="robot[city]" value="<%= @robot.city %>">
-  <input type="text" name="robot[hired]" value="<%= @robot.hired %>">
+  <input type="date" name="robot[hired]" value="<%= @robot.hired %>">
   <input type="text" name="robot[department]" value="<%= @robot.department %>">
   <input type="submit">
 </form>

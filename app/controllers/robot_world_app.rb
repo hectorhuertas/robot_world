@@ -1,15 +1,7 @@
-require 'models/robot_manager'
-# require 'sinatra/partial'
-require 'haml'
-
 class RobotWorldApp < Sinatra::Base
-  # register Sinatra::Partial
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
-  # set :partial_template_engine, :erb
 
   get '/' do
-    haml :dashboard
+    erb :dashboard
   end
 
   get '/robots/new' do

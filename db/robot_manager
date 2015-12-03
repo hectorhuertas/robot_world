@@ -1,12 +1,5 @@
 ---
 robots:
-- id: 9
-  name: asd
-  birth: asdf
-  state: asg
-  city: asg
-  hired: sg
-  department: sg
 - id: 10
   name: Destructor
   birth: ds
@@ -14,4 +7,11 @@ robots:
   city: gs
   hired: sg
   department: sg
-total: 10
+- id: 11
+  name: Reatron
+  birth: '2015-12-01'
+  state: CO
+  city: Denver
+  hired: '2015-12-30'
+  department: Propulsion
+total: 11

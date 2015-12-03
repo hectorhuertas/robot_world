@@ -1,10 +1,18 @@
-<%= erb :robot , :locals =>{
-:id => @robot.id,
-:avatar => @robot.avatar,
-:name => @robot.name,
-:birth => @robot.birth,
-:state => @robot.state,
-:city => @robot.city,
-:hired => @robot.hired,
-:department => @robot.department
-}%>
+<%= erb :header %>
+<div class="container">
+  <div class="row center">
+    <%= erb :robot , :locals =>{:robot => @robot} %>
+    <div class="col s12 m6">
+      <div class="card">
+
+        <h4>Birth: <%= @robot.birth %></h4>
+        <h4>State: <%= @robot.state %></h4>
+        <h4>City: <%= @robot.city %></h4>
+        <h4>Hired: <%= @robot.hired %></h4>
+        <h4>Department: <%= @robot.department %></h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%= erb :footer %>

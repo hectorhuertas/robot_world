@@ -1,8 +1,20 @@
-<img src="https://robohash.org/<%= robot.name %>" alt="<%= @robot.name %>" />
-<h1><%= robot %></h1>
-<!-- <h2><%= @robot.avatar %></h2>
-<h2><%= @robot.birth %></h2>
-<h2><%= @robot.state %></h2>
-<h2><%= @robot.city %></h2>
-<h2><%= @robot.department %></h2>
-<h2><%= @robot.hired %></h2> -->
+<div class="card">
+  <div class="row">
+    <div class="col s6">
+      <img class="responsive-img circle"src="<%= avatar %>" alt="avatar" />
+    </div>
+    <div class="col s6">
+      <h1><%= name %></h1>
+      <h5><%= id %></h5>
+      <h5><%= birth %></h5>
+      <h5><%= state %></h5>
+      <h5><%= city %></h5>
+      <h5><%= hired %></h5>
+      <h5><%= department %></h5>
+
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,17 @@
+<% @robots.each do |robot| %>
+<%= erb :robot , :locals =>{
+:id => robot.id,
+:avatar => robot.avatar,
+:name => robot.name,
+:birth => robot.birth,
+:state => robot.state,
+:city => robot.city,
+:hired => robot.hired,
+:department => robot.department
+}%>
+<a href="/robots/<%= robot.id %>/edit">Edit</a>
+  <form action="/robots/<%= robot.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+<% end %>

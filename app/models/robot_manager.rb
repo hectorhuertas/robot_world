@@ -1,5 +1,4 @@
 require 'yaml/store'
-require 'models/robot'
 
 class RobotManager
   def self.database
