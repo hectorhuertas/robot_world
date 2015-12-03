@@ -7,7 +7,7 @@ class Robot
               :city,
               :hired,
               :department
-              
+
   def initialize(data)
     @id   = data['id']
     @avatar = "https://robohash.org/#{data['id']}"
