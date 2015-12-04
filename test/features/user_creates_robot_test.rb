@@ -3,13 +3,13 @@ require_relative '../test_helper'
 class UserCreatesARobot < FeatureTest
   def create_robots(n)
     n.times do |i|
-    RobotManager.create({
-      :name => "a name#{i+1}",
-      :birth => "2024-02-12",
-      :state => "a state",
-      :city => "a city",
-      :hired => "2005-11-11",
-      :department => "a department"})
+      RobotManager.create({
+        :name       => "a name#{i+1}",
+        :birth      => "2024-02-12",
+        :state      => "a state",
+        :city       => "a city",
+        :hired      => "2005-11-11",
+        :department => "a department"})
     end
   end
 

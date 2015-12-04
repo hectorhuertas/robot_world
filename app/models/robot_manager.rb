@@ -9,11 +9,11 @@ class RobotManager
 
   def self.create(data)
     database.from(:robots).insert({
-      name: data[:name],
-      birth: data[:birth],
-      state: data[:state],
-      city: data[:city],
-      hired: data[:hired],
+      name:       data[:name],
+      birth:      data[:birth],
+      state:      data[:state],
+      city:       data[:city],
+      hired:      data[:hired],
       department: data[:department] })
   end
 
@@ -24,7 +24,6 @@ class RobotManager
 
   def self.find(id)
     raw_robot = database.from(:robots).where(id: id).to_a.first
-    # binding.pry
     Robot.new(raw_robot)
   end
 
@@ -34,15 +33,5 @@ class RobotManager
 
   def self.delete(id)
     database.from(:robots).where(id: id).delete
-    # database.transaction do
-    #   database['robots'].delete_if { |robot| robot["id"] == id }
-    # end
   end
-  #
-  # def self.delete_all
-  #   database.transaction do
-  #     database['robots'] = []
-  #     database['total'] = 0
-  #   end
-  # end
 end

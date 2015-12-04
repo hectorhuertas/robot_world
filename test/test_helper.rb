@@ -5,7 +5,9 @@ require 'minitest/autorun'
 # require 'capybara'
 require 'tilt/erb'
 
-DatabaseCleaner[:sequel, {:connection => Sequel.sqlite("db/robot_manager_test.sqlite3")}].strategy = :truncation
+DatabaseCleaner[:sequel, {
+                :connection => Sequel.sqlite("db/robot_manager_test.sqlite3")}
+                ].strategy = :truncation
 
 class Minitest::Test
   def setup
