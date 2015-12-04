@@ -25,7 +25,6 @@ class RobotManagerTest < Minitest::Test
     assert_equal "a city", robot.city
     assert_equal "2005-11-11", robot.hired
     assert_equal "a department", robot.department
-    assert_equal 1, robot.id
   end
 
   def test_it_finds_all_robots
@@ -39,18 +38,20 @@ class RobotManagerTest < Minitest::Test
   def test_it_finds_robots
     create_robots(2)
 
-    robot1 = RobotManager.find(1)
-    robot2 = RobotManager.find(2)
+    id1 = RobotManager.all.first.id
+    id2 = RobotManager.all.last.id
+
+    robot1 = RobotManager.find(id1)
+    robot2 = RobotManager.find(id2)
 
     assert_equal "a name1", robot1.name
     assert_equal "a name2", robot2.name
-    assert_equal 1, robot1.id
-    assert_equal 2, robot2.id
   end
 
   def test_it_updates_a_robot
     create_robots(1)
-    RobotManager.update(1,{
+    id = RobotManager.all.last.id
+    RobotManager.update(id,{
       :name => "a name UP",
       :birth => "2024-02-12",
       :state => "a state",
@@ -60,7 +61,6 @@ class RobotManagerTest < Minitest::Test
                          )
 
     assert_equal "a name UP", RobotManager.all.first.name
-    assert_equal 1, RobotManager.all.first.id
   end
 
   def test_it_deletes_a_robot
@@ -68,10 +68,10 @@ class RobotManagerTest < Minitest::Test
 
     assert_equal 2,  RobotManager.all.size
 
-    RobotManager.delete(1)
+    RobotManager.delete(RobotManager.all.first.id)
     assert_equal 1,  RobotManager.all.size
 
     robot = RobotManager.all.last
-    assert_equal 2, robot.id
+    assert_equal "a name2", robot.name
   end
 end

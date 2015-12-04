@@ -9,13 +9,13 @@ class UserCreatesARobot < FeatureTest
       :state => "a state",
       :city => "a city",
       :hired => "2005-11-11",
-      :department => "a department"}
-                         )
+      :department => "a department"})
     end
   end
 
   def test_robot_is_created
     visit '/robots/new'
+
     fill_in('robot[name]', :with => 'name1')
     fill_in('robot[birth]', :with => 'birth')
     fill_in('robot[state]', :with => 'state')
@@ -25,21 +25,21 @@ class UserCreatesARobot < FeatureTest
     click_button 'Submit'
 
     assert_equal '/robots', current_path
-    within('#1') do
       assert page.has_content?('name1')
-    end
   end
 
   def test_robot_is_updated
     create_robots(1)
 
     visit '/robots'
-    find('#1').click_link('Edit')
+    click_link('Edit')
     fill_in('robot[name]', :with => 'name1 UP')
     fill_in('robot[city]', :with => 'city UP')
     click_button 'Submit'
 
-    assert_equal '/robots/1', current_path
+    robot = RobotManager.all.last
+
+    assert_equal "/robots/#{robot.id}", current_path
     assert page.has_content?('name1 UP')
     assert page.has_content?('city UP')
   end
@@ -47,9 +47,23 @@ class UserCreatesARobot < FeatureTest
   def test_it_deletes_task
     create_robots(1)
 
+    robot = RobotManager.all.last
+
     visit '/robots'
-    find('#1').click_button 'Delete'
-  
-    refute page.has_css?('#1')
+    find("##{robot.id}").click_button 'Delete'
+
+    refute page.has_css?("##{robot.id}")
+  end
+
+  def test_user_sees_a_single_robot
+    create_robots(1)
+
+    visit '/robots'
+
+    robot = RobotManager.all.last
+
+    click_link("name1")
+    assert_equal "/robots/#{robot.id}", current_path
+    assert page.has_content?('name1')
   end
 end
